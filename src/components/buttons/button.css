@@ -5,6 +5,10 @@
     background-color: var(--green);
     border-radius: 0.5rem;
     color: var(--pure-white);
+
+    &:focus {
+        outline: 2px solid var(--green);
+    }
 }
 
 .button:hover {

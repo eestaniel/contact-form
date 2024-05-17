@@ -26,8 +26,7 @@
 }
 
 .textField:focus {
-    outline: none;
-    border-color: var(--green);
+    outline: 2px solid var(--green);
 }
 
 .textField:hover {
