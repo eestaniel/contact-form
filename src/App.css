@@ -124,6 +124,11 @@ form {
     transition: ease all .5s;
 }
 
+.attribution {
+    display: flex;
+    justify-content: center;
+}
+
 @media only screen and (min-width: 481px) {
     main {
         padding: 8rem 2.5rem;
