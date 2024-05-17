@@ -25,6 +25,10 @@
     width: 100%;
 }
 
+.textField:hover {
+    border-color: var(--green);
+}
+
 .message {
     display: flex;
     flex-direction: column;
