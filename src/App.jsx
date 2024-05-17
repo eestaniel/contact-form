@@ -5,6 +5,7 @@ import RadioSelection from "./components/radioselection/RadioSelection.jsx";
 import CheckBox from "./components/checkbox/CheckBox.jsx";
 import Button from "./components/buttons/Button.jsx";
 import Toast from "./components/toast/Toast.jsx";
+import {validateForm} from "./utils/validateForm.jsx";
 
 function App() {
   /*hashmap for states for firstname, lastname, email, query type, message, checkbox, */
@@ -28,22 +29,6 @@ function App() {
 
   const [isValid, setIsValid] = useState(false);
 
-  const validateForm = () => {
-    const errors = {};
-    if (!formData.firstName) errors.firstName = "This field is required";
-    if (!formData.lastName) errors.lastName = "This field is required";
-    if (!formData.email) {
-      errors.email = "This field is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      errors.email = "Please enter a valid email";
-    }
-    if (!formData.queryType) errors.queryType = "Please select a query type";
-    if (!formData.message) errors.message = "This field is required";
-    if (!formData.consent) errors.consent = "To submit this form, please consent to being contacted";
-
-    setFormErrors(errors);
-    return Object.keys(errors).length === 0;
-  };
 
   const handleChange = (field, value) => {
     setFormData(prev => ({...prev, [field]: value}));
@@ -51,12 +36,12 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validateForm()) {
+    const errors = validateForm(formData);
+    setFormErrors(errors);
+    if (Object.keys(errors).length === 0) {
       setIsValid(true);
       resetForm();
-      setTimeout(() => {
-        setIsValid(false);
-      }, 5000);
+      setTimeout(() => setIsValid(false), 5000);
     }
   }
 
