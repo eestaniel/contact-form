@@ -5,13 +5,11 @@
     gap: 1rem;
     margin-block: 1rem;
     padding-right: 1.5rem;
+    flex-wrap: wrap;
 
     :hover {
         cursor: pointer;
     }
-}
-.checkboxGroup.wrap {
-    flex-wrap: wrap;
 }
 
 .checkbox {
@@ -25,10 +23,18 @@
     }
 }
 
-.checkBoxLabel {
+.checkboxLabel {
     display: flex;
     flex-direction: row;
-    width: fit-content;
+    width: 100%;
+}
+
+.checkboxLabel img {
+    margin-right: 1rem;
+}
+
+.checkboxLabel span {
+    margin-left: 0.5rem;
 }
 
 .visually-hidden {
