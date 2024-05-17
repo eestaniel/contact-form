@@ -1,0 +1,33 @@
+.textFieldGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.textFieldLabel {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    color: var(--dark-grey);
+    gap: 0.5rem;
+}
+
+.requiredIndicator {
+    color: var(--green);
+}
+
+.textField {
+    border: 1px solid var(--medium-grey);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    color: var(--dark-grey);
+    width: 100%;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    min-height: 240px;
+}

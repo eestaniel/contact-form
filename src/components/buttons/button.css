@@ -1,0 +1,13 @@
+.button {
+    display: flex;
+    justify-content: center;
+    padding-block: 1rem;
+    background-color: var(--green);
+    border-radius: 0.5rem;
+    color: var(--pure-white);
+}
+
+.button:hover {
+    background-image: linear-gradient(rgb(0 0 0/50%)0 0);
+    cursor: pointer;
+}

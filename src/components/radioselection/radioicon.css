@@ -1,0 +1,13 @@
+.radio {
+    width: fit-content;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.radio-checked {
+    color: var(--green); /* Color when checked */
+}
+
+.radio-unchecked {
+    color: var(--medium-grey); /* Color when unchecked */
+}

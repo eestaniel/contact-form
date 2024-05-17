@@ -1,0 +1,25 @@
+.checkboxGroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin-block: 2.5rem;
+    padding-right: 1.5rem;
+}
+
+.checkbox {
+    width: 18px;
+    height: 18px;
+
+    & img {
+        height: 18px;
+        width: 18px;
+        max-width: fit-content;
+    }
+}
+
+.checkBoxLabel {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+}

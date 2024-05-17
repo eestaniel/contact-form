@@ -1,75 +1,109 @@
 @font-face {
-  font-family: 'Karla';
-  src: url("assets/fonts/Karla-Regular.ttf") format("truetype");
-  font-weight: 400;
+    font-family: 'Karla';
+    src: url("assets/fonts/Karla-Regular.ttf") format("truetype");
+    font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Karla';
-  src: url("assets/fonts/Karla-Bold.ttf") format("truetype");
-  font-weight: 700;
+    font-family: 'Karla';
+    src: url("assets/fonts/Karla-Bold.ttf") format("truetype");
+    font-weight: 700;
 }
+
 
 :root {
     /* Colors */
-  --dark-grey: 187, 24%, 22%;
-  --medium-grey: 186, 15%, 59%;
-  --pure-white: 0, 0%, 100%;
-  --green: 169, 82%, 27%;
-  --light-green: 148, 38%, 91%;
-  --red: 0, 66%, 56%;
+    --dark-grey: hsl(187, 24%, 22%);
+    --medium-grey: hsl(186, 15%, 59%);
+    --pure-white: hsl(0, 0%, 100%);
+    --green: hsl(169, 82%, 27%);
+    --light-green: hsl(148, 38%, 91%);
+    --red: hsl(0, 66%, 56%);
 
-  /* Typography */
-  --font-primary: 'Karla', sans-serif;
+    /* Typography */
+    --font-primary: 'Karla', sans-serif;
 
-  --font-size-heading: 32px;
-  --font-size-body-m: 18px;
-  --font-size-body-s: 16px;
+    --font-size-heading: 32px;
+    --font-size-body-m: 18px;
+    --font-size-body-s: 16px;
 
-  --line-height-tight: 100%;
-  --line-height-normal: 150%;
+    --line-height-tight: 100%;
+    --line-height-normal: 150%;
 
-  --letter-spacing-tight: -1px;
-  --letter-spacing-normal: 0;
+    --letter-spacing-tight: -1px;
+    --letter-spacing-normal: 0;
 
-  /* Spacing */
-  --3xl: 128px;
-  --2xl: 40px;
-  --xl: 32px;
-  --l: 24px;
-  --m: 16px;
-  --s: 12px;
-  --xs: 8px;
+    /* Spacing */
+    --3xl: 128px;
+    --2xl: 40px;
+    --xl: 32px;
+    --l: 24px;
+    --m: 16px;
+    --s: 12px;
+    --xs: 8px;
 }
 
 .heading {
-  font-family: var(--font-primary);
-  font-weight: 700; /* Bold */
-  font-size: var(--font-size-heading);
-  line-height: var(--line-height-tight);
-  letter-spacing: var(--letter-spacing-tight);
+    font-family: var(--font-primary);
+    font-weight: 700; /* Bold */
+    font-size: var(--font-size-heading);
+    line-height: var(--line-height-tight);
+    letter-spacing: var(--letter-spacing-tight);
 }
 
 .body-m-bold {
-  font-family: var(--font-primary);
-  font-weight: 700; /* Bold */
-  font-size: var(--font-size-body-m);
-  line-height: var(--line-height-normal);
-  letter-spacing: var(--letter-spacing-normal);
+    font-family: var(--font-primary);
+    font-weight: 700; /* Bold */
+    font-size: var(--font-size-body-m);
+    line-height: var(--line-height-normal);
+    letter-spacing: var(--letter-spacing-normal);
 }
 
 .body-m-regular {
-  font-family: var(--font-primary);
-  font-weight: 400; /* Regular */
-  font-size: var(--font-size-body-m);
-  line-height: var(--line-height-normal);
-  letter-spacing: var(--letter-spacing-normal);
+    font-family: var(--font-primary);
+    font-weight: 400; /* Regular */
+    font-size: var(--font-size-body-m);
+    line-height: var(--line-height-normal);
+    letter-spacing: var(--letter-spacing-normal);
 }
 
 .body-s {
-  font-family: var(--font-primary);
-  font-weight: 400; /* Regular */
-  font-size: var(--font-size-body-s);
-  line-height: var(--line-height-normal);
-  letter-spacing: var(--letter-spacing-normal);
+    font-family: var(--font-primary);
+    font-weight: 400; /* Regular */
+    font-size: var(--font-size-body-s);
+    line-height: var(--line-height-normal);
+    letter-spacing: var(--letter-spacing-normal);
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100vw;
+    background-color: var(--light-green);
+    padding: 2rem 1rem;
+}
+
+.container {
+    height: fit-content;
+    width: 100%;
+    background-color: var(--pure-white);
+    padding: 1.5rem;
+    color: var(--dark-grey);
+    border-radius: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+}
+
+
