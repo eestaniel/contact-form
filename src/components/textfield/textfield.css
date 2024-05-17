@@ -31,10 +31,17 @@
     justify-content: start;
     align-items: start;
     min-height: 240px;
+    resize: none;
+    transition: ease all .5s;
 }
 
 @media only screen and (min-width: 481px) {
     .message {
         min-height: 132px;
+    }
+}
+@media only screen and (min-width: 769px) {
+    .message {
+        min-height: 105px;
     }
 }
