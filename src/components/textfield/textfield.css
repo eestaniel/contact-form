@@ -25,8 +25,14 @@
     width: 100%;
 }
 
+.textField:focus {
+    outline: none;
+    border-color: var(--green);
+}
+
 .textField:hover {
     border-color: var(--green);
+    cursor: pointer !important;
 }
 
 .message {
@@ -39,11 +45,20 @@
     transition: ease all .5s;
 }
 
+.error {
+    border-color: var(--red);
+}
+
+.error-message {
+    color: var(--red);
+}
+
 @media only screen and (min-width: 481px) {
     .message {
         min-height: 132px;
     }
 }
+
 @media only screen and (min-width: 769px) {
     .message {
         min-height: 105px;

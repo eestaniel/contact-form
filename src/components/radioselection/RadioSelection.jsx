@@ -1,14 +1,8 @@
-import {useState} from 'react';
 import './radioselection.css';
 import RadioIcon from './RadioIcon.jsx'; // Make sure the path is correct
 
 // Updated RadioSelection to handle multiple radio buttons
-const RadioSelection = ({label, isRequired, queries}) => {
-  const [selectedQuery, setSelectedQuery] = useState('');
-
-  const handleChange = (query) => {
-    setSelectedQuery(query);
-  };
+const RadioSelection = ({label, isRequired, queries, selectedQuery, onChange, error}) => {
 
   return (
     <div className="radioGroup">
@@ -18,13 +12,15 @@ const RadioSelection = ({label, isRequired, queries}) => {
       <div className="radio-selection">
 
         {queries.map(query => (
-          <div key={query} className={`radio-item body-m-regular ${selectedQuery === query ? 'radio-checked' : 'radio-unchecked'}`}
-               onClick={() => handleChange(query)}>
+          <div key={query} className={`radio-item body-m-regular ${selectedQuery === query ? 'radio-checked' : 'radio-unchecked'} ${error ? 'error' : ''}`}
+               onClick={() => onChange(query)}>
             <RadioIcon isChecked={selectedQuery === query}/>
             <label>{query}</label>
           </div>
         ))}
+
       </div>
+      {error && <p className="body-s error-message">{error}</p>}
     </div>
 
   );

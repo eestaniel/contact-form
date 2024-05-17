@@ -1,8 +1,8 @@
 import './button.css';
 
-const Button = ({label}) => {
+const Button = ({label, onClick}) => {
   return (
-    <div className="button body-m-bold">
+    <div className="button body-m-bold" onClick={onClick}>
       {label}
     </div>
   );
