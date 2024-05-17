@@ -88,7 +88,7 @@ function App() {
                        error={formErrors.message}/>
             <CheckBox isRequired={true}
                       isChecked={formData.consent}
-                      onChange={(checked) => handleChange('consent', checked)}
+                      onChange={(e) => handleChange('consent', e.target.checked)}
                       error={formErrors.consent}/>
 
             <Button
