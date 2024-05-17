@@ -12,6 +12,10 @@
     }
 }
 
+.checkboxGroup:focus-within {
+    outline: 2px solid blue;
+}
+
 .checkbox {
     width: 18px;
     height: 18px;
