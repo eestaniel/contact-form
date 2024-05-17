@@ -4,6 +4,7 @@ import TextField from "./components/textfield/TextField.jsx";
 import RadioSelection from "./components/radioselection/RadioSelection.jsx";
 import CheckBox from "./components/checkbox/CheckBox.jsx";
 import Button from "./components/buttons/Button.jsx";
+import Toast from "./components/toast/Toast.jsx";
 
 function App() {
   /*hashmap for states for firstname, lastname, email, query type, message, checkbox, */
@@ -24,6 +25,8 @@ function App() {
     message: '',
     consent: ''
   });
+
+  const [isValid, setIsValid] = useState(false);
 
   const validateForm = () => {
     const errors = {};
@@ -49,13 +52,36 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      console.log("Form Data:", formData);
+      setIsValid(true);
+      resetForm();
+      setTimeout(() => {
+        setIsValid(false);
+      }, 5000);
     }
-    console.log("Form Errors:", formErrors)
+  }
+
+  const resetForm = () => {
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      queryType: '',
+      message: '',
+      consent: false
+    });
+    setFormErrors({
+      firstName: '',
+      lastName: '',
+      email: '',
+      queryType: '',
+      message: '',
+      consent: ''
+    });
   }
 
   return (
     <main>
+      {isValid && <Toast/>}
       <div className="container">
         <form>
           <h1 className="heading">Contact Us</h1>
