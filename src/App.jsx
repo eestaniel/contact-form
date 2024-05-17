@@ -54,9 +54,9 @@ function App() {
     if (validateForm()) {
       setIsValid(true);
       resetForm();
-      /*setTimeout(() => {
+      setTimeout(() => {
         setIsValid(false);
-      }, 5000);*/
+      }, 5000);
     }
   }
 
