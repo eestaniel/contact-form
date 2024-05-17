@@ -1,7 +1,6 @@
 import './textfield.css';
 
 const TextField = ({ label, value, onChange, isRequired, isMessage = false, error}) => {
-  // Conditionally render a textarea or input based on isMessage
   const InputOrTextArea = isMessage ? 'textarea' : 'input';
 
   return (

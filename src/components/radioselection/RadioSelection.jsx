@@ -1,7 +1,7 @@
 import './radioselection.css';
-import RadioIcon from './RadioIcon.jsx'; // Make sure the path is correct
+import RadioIcon from './RadioIcon.jsx';
 
-// Updated RadioSelection to handle multiple radio buttons
+
 const RadioSelection = ({label, isRequired, queries, selectedQuery, onChange, error}) => {
 
   return (

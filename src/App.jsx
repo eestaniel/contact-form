@@ -9,7 +9,6 @@ import {validateForm} from "./utils/validateForm.jsx";
 import {resetForm} from "./utils/resetForm.jsx";
 
 function App() {
-  /*hashmap for states for firstname, lastname, email, query type, message, checkbox, */
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
