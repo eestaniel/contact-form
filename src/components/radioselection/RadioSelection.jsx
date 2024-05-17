@@ -12,12 +12,18 @@ const RadioSelection = ({label, isRequired, queries, selectedQuery, onChange, er
       <div className="radio-selection">
 
         {queries.map(query => (
-          <div key={query} className={`radio-item body-m-regular ${selectedQuery === query ? 'radio-checked' : 'radio-unchecked'} ${error ? 'error' : ''}`}
-               onClick={() => onChange(query)}>
-            <RadioIcon isChecked={selectedQuery === query}/>
-            <label>{query}</label>
+          <div key={query}
+               className={`radio-item body-m-regular ${selectedQuery === query ? 'radio-checked' : 'radio-unchecked'} ${error ? 'error' : ''}`}
+               onClick={() => onChange(query)}
+               tabIndex="0"
+               role="radio"
+               aria-checked={selectedQuery === query}
+               onKeyPress={(e) => (e.key === ' ' || e.key === 'Enter') && onChange(query)}
+          >
+          <RadioIcon isChecked={selectedQuery === query}/>
+          <label>{query}</label>
           </div>
-        ))}
+          ))}
 
       </div>
       {error && <p className="body-s error-message">{error}</p>}

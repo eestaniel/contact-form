@@ -6,7 +6,13 @@ const CheckBox = ({isRequired, isChecked, onChange, error}) => {
 
   return (
     <>
-      <div className={`checkboxGroup ${error ? 'wrap': ''}`} onClick={() => onChange(!isChecked)}>
+      <div className={`checkboxGroup ${error ? 'wrap' : ''}`} onClick={() => onChange(!isChecked)}
+           tabIndex={0}
+           role="checkbox"
+           aria-checked={isChecked}
+           aria-required={isRequired}
+           onKeyPress={(e) => (e.key === ' ' || e.key === 'Enter') && onChange(!isChecked)}
+      >
         <div className="checkbox">
           <img src={isChecked ? checkBoxChecked : checkBox} alt="checkbox"/>
         </div>

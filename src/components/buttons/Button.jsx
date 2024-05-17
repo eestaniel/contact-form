@@ -1,10 +1,11 @@
 import './button.css';
 
 const Button = ({label, onClick}) => {
+
   return (
-    <div className="button body-m-bold" onClick={onClick}>
+    <button className="button body-m-bold" onClick={onClick} type="button">
       {label}
-    </div>
+    </button>
   );
 };
 
