@@ -13,7 +13,7 @@
 }
 
 .checkboxGroup:focus-within {
-    outline: 2px solid blue;
+    outline: 2px solid var(--green);
 }
 
 .checkbox {
