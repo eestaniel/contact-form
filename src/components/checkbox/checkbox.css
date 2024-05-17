@@ -31,4 +31,8 @@
     width: fit-content;
 }
 
+.visually-hidden {
+    visibility: hidden;
+    position: absolute;
+}
 
