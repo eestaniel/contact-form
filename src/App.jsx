@@ -6,6 +6,7 @@ import CheckBox from "./components/checkbox/CheckBox.jsx";
 import Button from "./components/buttons/Button.jsx";
 import Toast from "./components/toast/Toast.jsx";
 import {validateForm} from "./utils/validateForm.jsx";
+import {resetForm} from "./utils/resetForm.jsx";
 
 function App() {
   /*hashmap for states for firstname, lastname, email, query type, message, checkbox, */
@@ -40,28 +41,9 @@ function App() {
     setFormErrors(errors);
     if (Object.keys(errors).length === 0) {
       setIsValid(true);
-      resetForm();
+      resetForm(setFormData, setFormErrors);
       setTimeout(() => setIsValid(false), 5000);
     }
-  }
-
-  const resetForm = () => {
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      queryType: '',
-      message: '',
-      consent: false
-    });
-    setFormErrors({
-      firstName: '',
-      lastName: '',
-      email: '',
-      queryType: '',
-      message: '',
-      consent: ''
-    });
   }
 
   return (
@@ -73,22 +55,47 @@ function App() {
           <h1 className="heading">Contact Us</h1>
           <div className="form-group">
             <div className="name-group">
-              <TextField label={'First Name'} isRequired={true} value={formData.firstName}
-                         onChange={(e) => handleChange('firstName', e.target.value)} error={formErrors.firstName}/>
-              <TextField label={'Last Name'} isRequired={true} value={formData.lastName}
-                         onChange={(e) => handleChange('lastName', e.target.value)} error={formErrors.lastName}/>
+              <TextField label={'First Name'}
+                         isRequired={true}
+                         value={formData.firstName}
+                         onChange={(e) => handleChange('firstName', e.target.value)}
+                         error={formErrors.firstName}/>
+
+              <TextField label={'Last Name'}
+                         isRequired={true}
+                         value={formData.lastName}
+                         onChange={(e) => handleChange('lastName', e.target.value)}
+                         error={formErrors.lastName}/>
             </div>
 
-            <TextField label={'Email Address'} isRequired={true} value={formData.email}
-                       onChange={(e) => handleChange('email', e.target.value)} error={formErrors.email}/>
-            <RadioSelection label={'Query Type'} isRequired={true} queries={['General Enquiry', 'Support Request']}
+            <TextField label={'Email Address'}
+                       isRequired={true}
+                       value={formData.email}
+                       onChange={(e) => handleChange('email', e.target.value)}
+                       error={formErrors.email}/>
+
+            <RadioSelection label={'Query Type'}
+                            isRequired={true}
+                            queries={['General Enquiry', 'Support Request']}
                             selectedQuery={formData.queryType}
-                            onChange={(value) => handleChange('queryType', value)} error={formErrors.queryType}/>
-            <TextField label={'Message'} isRequired={true} isMessage={true} value={formData.message}
-                       onChange={(e) => handleChange('message', e.target.value)} error={formErrors.message}/>
-            <CheckBox isRequired={true} isChecked={formData.consent}
-                      onChange={(checked) => handleChange('consent', checked)} error={formErrors.consent}/>
-            <Button label={'Submit'} onClick={(e) => handleSubmit(e)}/>
+                            onChange={(value) => handleChange('queryType', value)}
+                            error={formErrors.queryType}/>
+
+            <TextField label={'Message'}
+                       isRequired={true}
+                       isMessage={true}
+                       value={formData.message}
+                       onChange={(e) => handleChange('message', e.target.value)}
+                       error={formErrors.message}/>
+            <CheckBox isRequired={true}
+                      isChecked={formData.consent}
+                      onChange={(checked) => handleChange('consent', checked)}
+                      error={formErrors.consent}/>
+
+            <Button
+              label={'Submit'}
+              onClick={(e) => handleSubmit(e)}/>
+
           </div>
         </form>
       </div>
