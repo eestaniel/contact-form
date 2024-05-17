@@ -54,9 +54,9 @@ function App() {
     if (validateForm()) {
       setIsValid(true);
       resetForm();
-      setTimeout(() => {
+      /*setTimeout(() => {
         setIsValid(false);
-      }, 5000);
+      }, 5000);*/
     }
   }
 
@@ -81,8 +81,9 @@ function App() {
 
   return (
     <main>
-      {isValid && <Toast/>}
+
       <div className="container">
+        {isValid && <Toast/>}
         <form>
           <h1 className="heading">Contact Us</h1>
           <div className="form-group">
