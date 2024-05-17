@@ -16,6 +16,10 @@
         width: 18px;
         max-width: fit-content;
     }
+
+    :hover {
+        cursor: pointer;
+    }
 }
 
 .checkBoxLabel {

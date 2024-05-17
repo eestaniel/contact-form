@@ -17,7 +17,6 @@ const CheckBox = ({isRequired}) => {
         </div>
         <label className="checkBoxLabel body-s" htmlFor="consent">
           <p>I consent to being contacted by the team {isRequired && <span className="requiredIndicator">*</span>}</p>
-
         </label>
       </div>
     </>

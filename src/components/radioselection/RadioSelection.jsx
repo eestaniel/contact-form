@@ -18,7 +18,7 @@ const RadioSelection = ({label, isRequired, queries}) => {
       <div className="radio-selection">
 
         {queries.map(query => (
-          <div key={query} className={`radio-item ${selectedQuery === query ? 'radio-checked' : 'radio-unchecked'}`}
+          <div key={query} className={`radio-item body-m-regular ${selectedQuery === query ? 'radio-checked' : 'radio-unchecked'}`}
                onClick={() => handleChange(query)}>
             <RadioIcon isChecked={selectedQuery === query}/>
             <label>{query}</label>
