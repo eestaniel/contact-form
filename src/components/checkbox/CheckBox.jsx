@@ -6,7 +6,7 @@ const CheckBox = ({isRequired, isChecked, onChange, error}) => {
 
   return (
     <>
-      <div className="checkboxGroup" onClick={() => onChange(!isChecked)}>
+      <div className={`checkboxGroup ${error ? 'wrap': ''}`} onClick={() => onChange(!isChecked)}>
         <div className="checkbox">
           <img src={isChecked ? checkBoxChecked : checkBox} alt="checkbox"/>
         </div>

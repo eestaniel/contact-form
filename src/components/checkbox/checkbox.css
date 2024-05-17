@@ -1,7 +1,6 @@
 .checkboxGroup {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     align-items: center;
     gap: 1rem;
     margin-block: 1rem;
@@ -10,6 +9,9 @@
     :hover {
         cursor: pointer;
     }
+}
+.checkboxGroup.wrap {
+    flex-wrap: wrap;
 }
 
 .checkbox {
@@ -28,3 +30,5 @@
     flex-direction: row;
     width: fit-content;
 }
+
+
