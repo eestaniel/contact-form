@@ -2,7 +2,7 @@ import './checkbox.css';
 import checkBox from '../../assets/svgs/checkbox.svg';
 import checkBoxChecked from '../../assets/svgs/checkbox_check.svg';
 
-const CheckBox = ({ isRequired, isChecked, onChange, error }) => {
+const CheckBox = ({isRequired, isChecked, onChange, error}) => {
   const checkboxId = 'custom-checkbox';
 
   return (
@@ -15,9 +15,9 @@ const CheckBox = ({ isRequired, isChecked, onChange, error }) => {
         className="visually-hidden"
       />
       <label htmlFor={checkboxId} className="checkboxLabel">
-        <img src={isChecked ? checkBoxChecked : checkBox} alt="checkbox" />
-        I consent to being contacted by the team
-        {isRequired && <span className="requiredIndicator">*</span>}
+        <img src={isChecked ? checkBoxChecked : checkBox} alt="checkbox"/>
+        <p>I consent to being contacted by the team {isRequired && <span className="requiredIndicator">*</span>}</p>
+
       </label>
       {error && <p className="body-s error-message">{error}</p>}
     </div>
